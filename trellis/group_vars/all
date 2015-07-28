@@ -24,12 +24,6 @@ users:
     keys:
       - "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
       - https://github.com/masoninthesis.keys
-  - name: "{{ admin_user }}"
-    groups:
-      - sudo
-    keys:
-      - "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
-      - https://github.com/masoninthesis.keys
 
 admin_user: admin
 sshd_permit_root_login: "yes" # If "no", admin_user must be in 'users' above (with sudo group) and in sudoer_passwords
