@@ -1,0 +1,1 @@
+{"nfs":{"/vagrant-nfs-jackalopemedia.com":{"type":"nfs","guestpath":"/vagrant-nfs-jackalopemedia.com","hostpath":"/Users/Mason/Sites/jackalopemedia.com/site","disabled":false,"map_uid":501,"map_gid":20,"nfs_udp":true,"nfs_version":3,"uuid":"391741901"}},"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/Mason/Sites/jackalopemedia.com","disabled":false}}}

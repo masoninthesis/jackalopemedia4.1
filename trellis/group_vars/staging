@@ -1,13 +1,31 @@
 mysql_root_password: stagingpw
 
+github_ssh_keys:
+  - username: masoninthesis
+    authorized:
+      - "{{ web_user }}"
+
+project_pre_build_commands_local:
+   - path: "{{ project.local_path }}/web/app/themes/sage"
+     cmd: npm install
+   - path: "{{ project.local_path }}/web/app/themes/sage"
+     cmd: bower install
+   - path: "{{ project.local_path }}/web/app/themes/sage"
+     cmd: gulp --production
+
+project_local_files:
+  - name: compiled theme assets
+    src: "{{ project.local_path }}/web/app/themes/sage/dist"
+    dest: web/app/themes/sage
+
 wordpress_sites:
-  example.com:
+  jackalopemedia.com:
     site_hosts:
-      - staging.example.com
-    local_path: ../site # path targeting local Bedrock site directory (relative to Ansible root)
-    repo: git@github.com:roots/bedrock.git
+      - 107.170.254.85
+    local_path: '../site' # path targeting local Bedrock site directory (relative to Ansible root)
+    repo: git@github.com:masoninthesis/jackalopemedia4.1.git
     branch: master
-    # subtree: site # Use this if following the roots-example-project structure
+    subtree: site # Use this if following the roots-example-project structure
     multisite:
       enabled: false
       subdomains: false
@@ -18,8 +36,8 @@ wordpress_sites:
       duration: 30s
     system_cron: true
     env:
-      wp_home: http://staging.example.com
-      wp_siteurl: http://staging.example.com/wp
+      wp_home: http://107.170.254.85
+      wp_siteurl: http://107.170.254.85/wp
       wp_env: staging
       db_name: example_staging
       db_user: example_dbuser
