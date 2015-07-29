@@ -22,7 +22,7 @@ wordpress_sites:
   jackalopemedia.com:
     site_hosts:
       - 104.131.130.115
-    local_path: '../site' # path targeting local Bedrock site directory (relative to Ansible root)
+    local_path: '../site' # path targeting local Bedrock site directory (relative to Ansible's root)
     repo: git@github.com:masoninthesis/jackalopemedia4.1.git
     branch: master
     subtree: site # Use this if following the roots-example-project structure
